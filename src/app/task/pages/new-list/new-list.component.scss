@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .modal-box {
+    min-height: 150px;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+
+    .back {
+      margin-top: 10px;
+    }
+  }
+}

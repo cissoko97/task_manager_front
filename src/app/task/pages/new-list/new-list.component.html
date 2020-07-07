@@ -1,0 +1,19 @@
+<div class="modal-box has-background-light">
+  <h1 class="title">
+    Create a new list
+  </h1>
+  <form [formGroup]="listForm" (ngSubmit)="createList()">
+
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <input type="text" formControlName=title placeholder="Enter list title" class="input has-background-light is-normal" />
+      </p>
+      <p class="control">
+        <input type="submit" [disabled]="!listForm.valid" class="button is-primary is-normal has-text-white"
+          value="Create">
+      </p>
+    </div>
+  </form>
+
+  <Button class="button is-danger back is-small" routerLink="../lists">Go Back</Button>
+</div>

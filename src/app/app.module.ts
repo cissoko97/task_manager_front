@@ -1,18 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { WebReqInterceptor } from './service/web-req.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
+import { TaskModule } from './task/task.module';
+import { ToastrModule } from 'ngx-toastr';
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TaskModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    NgxEchartsModule.forRoot({
+      echarts
+    })
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=roboto:300,400,700|Nunito:300,400,700');
+
+$tomato: tomato;
+$red:#db4444ec;
+$turquoise:#44ddd0;
+$green:#27d7a1;
+$light-green:#45f69e;
+$dark-green:rgb(0, 100, 100);
+
+$light:#f8f8f8;
+
+
+// update bulma global variable
+$family-sans-serif:'roboto',
+'Nunito';
+$primary:$green;
+$link:$light-green;
+
+// update bulma some component variable
+$control-border-width:2px;
+$input-border-color:transparent;
+$input-shadow:none;
+
+// Set custom global styles (will be applied to whole app)
+
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background: linear-gradient(to left top, $light-green, $turquoise);
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.title{
+   font-family:'Nunito';
+   font-size: 18px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   color: rgb(48, 47, 47) !important;
+}

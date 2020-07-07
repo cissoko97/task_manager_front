@@ -1,0 +1,203 @@
+@import '../../../../main-style.scss';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .centered-content {
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    // justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-height: 450px;
+    max-width: 800px;
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      background: white;
+      padding: 20px 10px;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+
+      .list-menu {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-top: 15px;
+        padding: 2px;
+        margin-bottom: 5px;
+
+        .list-item-menu {
+          display: flex;
+          align-items: center;
+
+          padding: 5px 10px;
+          border-radius: 5px;
+          width: 100%;
+          color: #5f5f5f;
+          margin-bottom: 5px;
+
+          transition: background .8s ease;
+
+          &:hover {
+            background: $light;
+          }
+
+          &.is-active {
+            background: #cff8ef;
+            color: $dark-green;
+          }
+        }
+      }
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background: rgb(133, 129, 129);
+      padding: 20px 10px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      position: relative;
+
+      .task {
+        display: flex;
+        flex-direction: row;
+        overflow-y: auto;
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px;
+
+        .task-item {
+          padding: 10px 15px;
+          background: white;
+          display: flex;
+          flex-direction: row;
+          border-radius: 3px;
+          // flex-grow: 1;
+          width: 100%;
+          // position: relative;
+          margin-bottom: 5px;
+          cursor: pointer;
+
+          // &:not(.complete) {
+          //   transition: box-shadow 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+
+          //   &:active {
+          //     transform: scale(0.98);
+          //   }
+
+          &:hover {
+            box-shadow: 0 0 1px 2px #eeeeee;
+
+            .task-buttons {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          // }
+
+          // &.complete {
+          //   text-decoration: line-through;
+          //   opacity: 0.7;
+          // }
+        }
+
+      }
+
+      .circle-add-button {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 20px;
+        right: 35px;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 300;
+        background: $primary;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+
+      }
+    }
+  }
+}
+
+.title {
+  font-family: 'Nunito';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.dropdown-content {
+  padding: 5px 0 !important;
+}
+
+
+.empty {
+  font-size: 18px;
+  color: #888;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+
+  .title {
+    flex-grow: 1;
+  }
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  &:not(.complete) {
+    transition: box-shadow 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    // &:hover {
+    //   box-shadow: 0 0 1px 2px #eeeeee;
+    // }
+  }
+
+  &.complete {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+}
+
+.task-buttons {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &.complete {
+    display: none;
+  }
+
+  .button {
+    border-radius: 50%;
+  }
+}

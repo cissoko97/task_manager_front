@@ -1,0 +1,29 @@
+<div class="signup-box has-background-white">
+  <h1 class="title">sign up</h1>
+  <form (ngSubmit)="signUpSubmit()" [formGroup]=signUpForm>
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input formControlName=email class="input has-background-light " type="email" placeholder="Email">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control has-icons-left">
+        <input formControlName=password class="input has-background-light " type="password" placeholder="Password">
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field" style="display: flex; justify-content: flex-end;">
+      <div class="control ">
+        <button type="submit" [disabled]="!signUpForm.valid" class="button is-success has-text-white">
+          Sign Up
+        </button>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 10px;">Already register? <a routerLink='../login'>Log in</a> here!!</p>
+  </form>
+</div>
