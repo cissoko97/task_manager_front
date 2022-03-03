@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host: 'https://whispering-woodland-42015.herokuapp.com'
+  host: 'http://localhost:5555'
 };
 
 /*

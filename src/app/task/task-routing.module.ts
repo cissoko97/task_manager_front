@@ -8,7 +8,7 @@ import { NewTaskComponent } from './pages/new-task/new-task.component';
 
 const routes: Routes = [{
   path: '', component: TaskComponent, children: [
-    { path: 'lists', component: TaskViewComponent },
+    { path: 'lists', component: TaskViewComponent , resolve : {} },
     { path: 'lists/:listId', component: TaskViewComponent },
     { path: 'new-list', component: NewListComponent },
     { path: 'lists/:listId/new-task', component: NewTaskComponent },

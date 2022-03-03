@@ -13,7 +13,12 @@ import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
-  declarations: [TaskComponent, TaskViewComponent, NewListComponent, NewTaskComponent, EditListModalComponent, DashboardComponent],
+  declarations: [TaskComponent,
+    TaskViewComponent,
+    NewListComponent,
+    NewTaskComponent,
+    EditListModalComponent,
+    DashboardComponent],
   imports: [
     CommonModule,
     FormsModule,
