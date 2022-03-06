@@ -1,0 +1,35 @@
+{
+  "HELLO": "hello {{value}}",
+  "VARIOUS": {
+    "BACK": "go BAck",
+    "CREATE": "Create",
+    "UPDATE": "update",
+    "EMAIL": "mail",
+    "PASSWORD": "Password",
+    "NOTACCOUNT": "Not Sign ?",
+    "!NOTACCOUNT": "Already Sign ?",
+    "LOGOUT": "Logout",
+    "TASKLIST": "Lists",
+    "TASK": "Tasks",
+    "EDIT": "update",
+    "DELETE": "Delete",
+    "NEWLIST": "New List",
+    "NEWTASK": "New Task",
+    "UPDATELIST": "Update List",
+    "UPDATETASK": "Update Task",
+    "CREATE.NEWLIST": "Create New List",
+    "CREATE.NEWTASK": "Create New Task",
+    "NOTSELECTLIST": "Click Add button to add Task to list",
+    "EMPTYTASK": "Click Add button to add Task to list",
+    "FR": "French",
+    "EN": "English"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "LOGIN"
+    },
+    "SIGNUP": {
+      "TITLE": "SIGNUP"
+    }
+  }
+}
