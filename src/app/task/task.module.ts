@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [TaskComponent,
@@ -22,6 +23,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     ReactiveFormsModule,
     TaskRoutingModule,
     NgxEchartsModule.forRoot({

@@ -1,0 +1,35 @@
+{
+  "HELLO": "Bonjour {{value}}",
+  "VARIOUS": {
+    "BACK": "Retour",
+    "CREATE": "Créer",
+    "UPDATE": "Modifier",
+    "EMAIL": "mail",
+    "PASSWORD": "Mot de Passe",
+    "NOTACCOUNT": "Pas de Compte ?",
+    "!NOTACCOUNT": "Deja inscrit ?",
+    "LOGOUT": "Deconnexion",
+    "TASKLIST": "Listes",
+    "TASK": "Tâches",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer",
+    "NEWLIST": "Nouvelle List",
+    "NEWTASK": "Nouvelle Tâche",
+    "UPDATELIST": "modifier List",
+    "UPDATETASK": "Modifier tâche",
+    "CREATE.NEWLIST": "Creer Nouvelle List",
+    "CREATE.NEWTASK": "Creer Nouvelle Tâche",
+    "NOTSELECTLIST": "Selectionner une liste pour afficher ses tâches",
+    "EMPTYTASK": "Cliquer sur le bouton pour ajouter une tache à la liste",
+    "FR": "Français",
+    "EN": "Anglais"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "CONNEXION"
+    },
+    "SIGNUP": {
+      "TITLE": "S'inscrire"
+    }
+  }
+}

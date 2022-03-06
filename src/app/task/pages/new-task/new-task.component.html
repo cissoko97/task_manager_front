@@ -1,21 +1,22 @@
 <div class="modal-box has-background-light">
   <h1 class="title">
-    Create a new task
+    {{'VARIOUS.CREATE.NEWTASK'|translate|titlecase}}
+
   </h1>
   <form [formGroup]="taskForm" (ngSubmit)="createTask()">
 
     <div class="field is-grouped">
       <p class="control is-expanded">
-        <input type="text" formControlName=title placeholder="Enter task title"
+        <input type="text" formControlName=title placeholder="{{'VARIOUS.NEWTASK'|translate|titlecase}}"
           class="input has-background-light is-normal" />
       </p>
       <p class="control">
         <input type="submit" [disabled]="!taskForm.valid" class="button is-primary is-normal has-text-white"
-          value="Create">
+          value="{{'VARIOUS.CREATE'|translate|titlecase}}">
       </p>
     </div>
     <!-- {{listForm.value|json}} -->
   </form>
 
-  <Button class="button is-danger back is-small" [routerLink]="['../']">Go Back</Button>
+  <Button class="button is-danger back is-small" [routerLink]="['../']">{{'VARIOUS.BACK'|translate|titlecase}}</Button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TaskService } from 'src/app/service/task.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { List, Task } from '../../models';
@@ -7,6 +7,7 @@ import { EditListModalComponent } from '../../components/edit-list-modal/edit-li
 import { ToastrService } from 'ngx-toastr';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { AuthService } from 'src/app/service/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-task-view',
@@ -14,14 +15,28 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./task-view.component.scss']
 })
 export class TaskViewComponent implements OnInit {
+  currentLanguage: string;
   listId: string;
   listArray: Array<List>;
   tasks: Array<Task>;
+  @ViewChild('selectLanguage', { static: true }) selectLanguage: ElementRef<HTMLSelectElement>;
   // tslint:disable-next-line: max-line-length
-  constructor(private taskService: TaskService, private router: Router, private route: ActivatedRoute, public dialog: MatDialog, private toastService: ToastrService, private authService: AuthService) {
+  constructor(private taskService: TaskService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public dialog: MatDialog,
+    private toastService: ToastrService,
+    private authService: AuthService,
+    // private rendered2: Renderer2,
+    private translate: TranslateService) {
   }
 
   ngOnInit() {
+
+    console.log(this.selectLanguage);
+    console.log(this.translate.currentLang);
+
+    this.selectLanguage.nativeElement.value = this.translate.currentLang;
     this.taskService.getList().subscribe((lists: Array<List>) => {
       this.listArray = lists;
       console.log(lists);
@@ -143,7 +158,16 @@ export class TaskViewComponent implements OnInit {
       });
   }
 
-  logOut() {
+  logOut(): void {
     this.authService.logout();
+  }
+
+  handleSelect(data: any): void {
+    console.log(data.target.value);
+    this.translate.use(data.target.value).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.error(error);
+    })
   }
 }

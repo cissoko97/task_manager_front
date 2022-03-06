@@ -2,10 +2,10 @@
   <div *ngIf="data.flag === 'list' ; then listTask else flagTask">
   </div>
   <ng-template #listTask>
-    <div class="title">update list</div>
+    <div class="title">{{"VARIOUS.UPDATELIST"|translate|titlecase}}</div>
   </ng-template>
   <ng-template #flagTask>
-    <div class="title">update task</div>
+    <div class="title">{{"VARIOUS.UPDATETASK"|translate|titlecase}}</div>
   </ng-template>
   <div class="field is-grouped">
     <p class="control is-expanded">
@@ -14,7 +14,7 @@
     </p>
     <p class="control">
       <button class="button is-success has-text-white" [disabled]="!listForm.valid" type="submit"
-        (click)="onSubmit()">Update</button>
+        (click)="onSubmit()">{{"VARIOUS.UPDATE"|translate|titlecase}}</button>
     </p>
   </div>
 

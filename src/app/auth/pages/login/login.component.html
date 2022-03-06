@@ -1,9 +1,10 @@
 <div class="login-box has-background-white">
-  <h1 class="title">Login</h1>
+  <h1 class="title">{{"AUTH.LOGIN.TITLE"|translate|uppercase}}</h1>
   <form (ngSubmit)="loginSubmit()" [formGroup]=loginForm>
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input formControlName=email class="input has-background-light " type="email" placeholder="Email">
+        <input formControlName=email class="input has-background-light " type="email"
+          placeholder="{{'VARIOUS.EMAIL' |translate |titlecase}}">
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -11,7 +12,9 @@
     </div>
     <div class="field">
       <p class="control has-icons-left">
-        <input formControlName=password class="input has-background-light " type="password" placeholder="Password">
+        <input formControlName=password class="input has-background-light " type="password"
+          placeholder="{{'VARIOUS.PASSWORD' |translate |titlecase}}">
+
         <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>
@@ -20,11 +23,11 @@
     <div class="field" style="display: flex; justify-content: flex-end;">
       <div class="control">
         <button type="submit" [disabled]="!loginForm.valid" class="button is-success has-text-white">
-          Login
+          {{"AUTH.LOGIN.TITLE"|translate|uppercase}}
         </button>
       </div>
     </div>
-    <p style="text-align: center; margin-top: 10px;">Not got an Account? <a routerLink='../register'>Sign Up</a> now!
-    </p>
+    <p style="text-align: center; margin-top: 10px;">{{"VARIOUS.NOTACCOUNT"|translate|uppercase}} <a
+        routerLink='../register'>{{"AUTH.SIGNUP.TITLE"|translate|uppercase}}</a></p>
   </form>
 </div>
